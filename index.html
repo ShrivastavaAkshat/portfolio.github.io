@@ -477,33 +477,7 @@
 	
 	<!-- Main -->
 	<script src="js/main.js"></script>
-	<script>
-		function seterror(id,error){
-			Element=document.getElementById(id);
-			Element.getElementById('formerror')[0].innerHTML = error
-		}
-		function validForm(){
-			var returnval = true;
-			var name =document.forms['submit-to-google-sheet'][f_name].value;
-			if(name.length<3){
-				seterror("first name", "Name length should be More Than 3 ");
-				returnval=false
-			}
-
-
-			return returnval;
-		}
-
-		const scriptURL = "https://script.google.com/macros/s/AKfycbww0z5oW2i6zP725YjNNKVB4Pgvs2Fgx5clNgWVS1mSl1rKXExmItZCeHt38G8bQkIt8w/exec"
-		const form = document.forms['submit-to-google-sheet']
-	  
-		form.addEventListener('submit', e => {
-		  e.preventDefault()
-		  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-			.then(response => console.log('Success!', response))
-			.catch(error => console.error('Error!', error.message))
-		})
-	  </script>
+	
 
 	</body>
 </html>
